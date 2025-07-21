@@ -6,7 +6,10 @@ const app: Application = express();
 
 //parsers
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ['https://event-scheduler-client-nine.vercel.app'],
+  credentials: true
+}));
 
 // application routes
 app.use('/api', EventRoutes);
